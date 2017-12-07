@@ -1,0 +1,17 @@
+body {
+    background-color: #990000;
+}
+.name{
+    color: #ffffff;
+    font-size: 25px;
+    padding-bottom: .5em;
+    padding-top: 1em;
+    font-weight: 500;
+}
+.login-box{
+    background-color: #000033;
+    padding: 1em;
+    border-radius: 1em;
+    opacity: 0.9;
+    cursor: pointer;
+}
