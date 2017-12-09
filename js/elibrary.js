@@ -71,6 +71,39 @@ Nafrcelibrary.config(function($stateProvider, $urlRouterProvider){
                     
 				}
 				
+			})	
+	.state('workshopbooks', {
+				url: '/workshopbooks',
+				views: {
+				     'libraryview': {
+				        controller: 'Libraryportal', 
+                       templateUrl:"/pages/workshopbooks.php"
+                    }
+                    
+				}
+				
+			})
+	.state('addnewbook', {
+				url: '/addnewbook',
+				views: {
+				     'libraryview': {
+				        controller: 'Addnewbook', 
+                       templateUrl:"/pages/addnewbook.php"
+                    }
+                    
+				}
+				
+			})	
+	.state('booklist', {
+				url: '/booklist',
+				views: {
+				     'libraryview': {
+				        controller: 'Libraryportal', 
+                       templateUrl:"/pages/booklist.php"
+                    }
+                    
+				}
+				
 			});		
     
 }); 
@@ -109,13 +142,13 @@ Nafrcelibrary.controller('Libraryportal', function($scope){
         	    if((username=="admin") && (password=="library")){
         	        //admin login
         	        window.alert("You Have Successfully Login As Admin");
-        	       window.location.href="https://elibrary-abwali.c9users.io/#!/adminportal";
+        	       window.location.href="#!/adminportal";
         	        
         	    }
         	    else if((username=="library") && (password=="nafrc")){
         	        //menber login
         	         window.alert("You Have Successfully Login As Member");
-        	        window.location.href = "https://elibrary-abwali.c9users.io/#!/memberportal";
+        	        window.location.href = "#!/memberportal";
         	        
         	    }
         	    else{
@@ -139,6 +172,9 @@ Nafrcelibrary.controller('Pdfviewercontroller', function($scope){
 	
 });
     
+Nafrcelibrary.controller('Addnewbook', function($scope){
+	
+});    
 
 
 

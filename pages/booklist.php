@@ -18,7 +18,7 @@
                                 <div class="col">
                                     <a href="#!/adminportal"><i class="fa fa-home fa-2x" aria-hidden="true" ></i></a>
                                 </div>
-                                <div class="col text-center">Admin Portal : Dashboard</div>
+                                <div class="col text-center">Admin Portal : Workshop Books</div>
                                 <div class="col text-right">
                                     <a href="#/login"><i class="fa fa-sign-out fa-2x" aria-hidden="true"></i> Log-Out</a>
                                 </div>
@@ -63,32 +63,21 @@
                           <thead>
                             <tr class="table-primary">
                               <th scope="col">#</th>
-                              <th scope="col">Category</th>
-                              <th scope="col">Total</th>
-                              
+                              <th scope="col">Book Title</th>
+                              <th scope="col">Author</th>
+                              <th scope="col">Year</th>
+                              <th scope="col">Edition</th>
                             </tr>
                           </thead>
                           <tbody>
                               <tr>
                                   <th scope="row">1</th>
-                                  <td>E-books</td>
-                                  <td>10,0000</td>
+                                  <td>AFIT</td>
+                                  <td>NAF</td>
+                                  <td>2017</td>
+                                  <td>second edition</td>
                             </tr>
-                            <tr>
-                                  <th scope="row">2</th>
-                                  <td>Journals</td>
-                                  <td>10,0000</td>
-                            </tr>
-                            <tr>
-                                  <th scope="row">3</th>
-                                  <td>Reports / Article</td>
-                                  <td>10,0000</td>
-                            </tr>
-                            <tr>
-                                  <th scope="row">4</th>
-                                  <td>Documentation / Documentary</td>
-                                  <td>10,0000</td>
-                            </tr>
+                         
                           </tbody>
                          </table>
                         

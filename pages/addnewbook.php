@@ -59,38 +59,7 @@
                     </div>
                     
                     <div class="col-9">
-                        <table class="table table-hover">
-                          <thead>
-                            <tr class="table-primary">
-                              <th scope="col">#</th>
-                              <th scope="col">Category</th>
-                              <th scope="col">Total</th>
-                              
-                            </tr>
-                          </thead>
-                          <tbody>
-                              <tr>
-                                  <th scope="row">1</th>
-                                  <td>E-books</td>
-                                  <td>10,0000</td>
-                            </tr>
-                            <tr>
-                                  <th scope="row">2</th>
-                                  <td>Journals</td>
-                                  <td>10,0000</td>
-                            </tr>
-                            <tr>
-                                  <th scope="row">3</th>
-                                  <td>Reports / Article</td>
-                                  <td>10,0000</td>
-                            </tr>
-                            <tr>
-                                  <th scope="row">4</th>
-                                  <td>Documentation / Documentary</td>
-                                  <td>10,0000</td>
-                            </tr>
-                          </tbody>
-                         </table>
+                        lis of books
                         
                     </div>
                     
