@@ -64,16 +64,16 @@
                             <tr class="table-primary">
                               <th scope="col">#</th>
                               <th scope="col">Workshops Name</th>
-                              <th scope="col">Total Of Available</th>
+                              <th scope="col">Total Of Available Books</th>
                               
                             </tr>
                           </thead>
                           <tbody>
-                              <tr>
-                                  <th scope="row">1</th>
-                                  <td>Arg wing</td>
-                                  <td>7,000</td>
-                            </tr>
+                              <tr ng-repeat="section in librarysectiondata">
+                                  <th scope="row">{{$index+1}}</th>
+                                  <td>{{section.section}}</td>
+                                  <td>{{section.totalbooks}}</td>
+                                </tr>
                          
                           </tbody>
                          </table>

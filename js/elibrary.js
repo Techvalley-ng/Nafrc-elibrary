@@ -1,82 +1,35 @@
 //######################################################## anguler js ################################
-
-var Nafrcelibrary = angular.module('Nafrcelibrary', ['ui.router']);
-
-Nafrcelibrary.config(function($stateProvider, $urlRouterProvider){
+var Nafrcelibrary = angular.module('Nafrcelibrary', ['ui.router','ngRoute']);
+Nafrcelibrary.config(function($stateProvider, $urlRouterProvider,$routeProvider){
     $urlRouterProvider.otherwise("/login");
     $stateProvider
-    
     .state('login', {
 				url: '/login',
 				views: {
 				     'libraryview': {
-				        controller: 'Libraryportal', 
+				        controller: 'Nafrclibrary', 
                        templateUrl:"/pages/login.php"
                     }
                     
 				}
 				
 			})
-	.state('memberportal', {
-				url: '/memberportal',
-				views: {
-				     'libraryview': {
-				        controller: 'Libraryportal', 
-                       templateUrl:"/pages/memberportal.php"
-                    }
-                    
-				}
-				
-			})
-	.state('pdfviewer', {
-				url: '/pdfviewer',
-				views: {
-				     'libraryview': {
-				        controller: 'Pdfviewercontroller', 
-                       templateUrl:"/pages/pdfviewer.php"
-                    }
-                    
-				}
-				
-			})	
-	.state('onlinebooks', {
-				url: '/onlinebooks',
-				views: {
-				     'libraryview': {
-				        controller: 'Pdfviewercontroller', 
-                        templateUrl:"/pages/onlinebooks.php"
-                    }
-                    
-				}
-				
-			})	
-	.state('internet', {
-				url: '/internet',
-				views: {
-				     'libraryview': {
-				        controller: 'Pdfviewercontroller', 
-                        templateUrl:"/pages/internet.php"
-                    }
-                    
-				}
-				
-			})		
 	.state('adminportal', {
 				url: '/adminportal',
 				views: {
 				     'libraryview': {
-				        controller: 'Libraryportal', 
+				        controller: 'Nafrclibrary', 
                        templateUrl:"/pages/adminportal.php"
                     }
                     
 				}
 				
-			})	
+			})
 	.state('workshopbooks', {
 				url: '/workshopbooks',
 				views: {
 				     'libraryview': {
-				        controller: 'Libraryportal', 
+				        controller: 'Nafrclibrary', 
                        templateUrl:"/pages/workshopbooks.php"
                     }
                     
@@ -87,31 +40,68 @@ Nafrcelibrary.config(function($stateProvider, $urlRouterProvider){
 				url: '/addnewbook',
 				views: {
 				     'libraryview': {
-				        controller: 'Addnewbook', 
+				        controller: 'Nafrclibrary', 
                        templateUrl:"/pages/addnewbook.php"
                     }
                     
 				}
 				
-			})	
+			})
 	.state('booklist', {
 				url: '/booklist',
 				views: {
 				     'libraryview': {
-				        controller: 'Libraryportal', 
+				        controller: 'Nafrclibrary', 
                        templateUrl:"/pages/booklist.php"
                     }
                     
 				}
 				
+			})
+	.state('memberportal', {
+				url: '/memberportal/:ctid',
+				views: {
+				     'libraryview': {
+				        controller: 'Nafrclibrary', 
+                       templateUrl:"/pages/memberportal.php"
+                    }
+                    
+				}
+				
+			})		
+	.state('onlinebooks', {
+				url: '/onlinebooks',
+				views: {
+				     'libraryview': {
+				        controller: 'Outportal', 
+                        templateUrl:"/pages/onlinebooks.php"
+                    }
+                    
+				}
+				
+			})
+	.state('internet', {
+				url: '/internet',
+				views: {
+				     'libraryview': {
+				        controller: 'Outportal', 
+                        templateUrl:"/pages/internet.php"
+                    }
+				}
+			})
+	.state('pdfviwer', {
+				url: '/pdfviwer/:bookurl',
+				views: {
+				     'libraryview': {
+				        controller: 'Pdfviwer', 
+                        templateUrl:"/pages/pdfviewer.php"
+                    }
+				}
 			});		
-    
-}); 
-
+});   
 //***************************************** controller *****************************
-Nafrcelibrary.controller('Libraryportal', function($scope){
-	
-	// ******************************************** LOGIN ***************************
+Nafrcelibrary.controller('Nafrclibrary', ["$scope","$http","$stateParams", function($scope,$http,$stateParams){
+    	// ******************************************** LOGIN ***************************
 	
 	$(document).ready(function (){
 	    //login with JS and validation
@@ -148,7 +138,7 @@ Nafrcelibrary.controller('Libraryportal', function($scope){
         	    else if((username=="library") && (password=="nafrc")){
         	        //menber login
         	         window.alert("You Have Successfully Login As Member");
-        	        window.location.href = "#!/memberportal";
+        	        window.location.href = "#!/memberportal/g1";
         	        
         	    }
         	    else{
@@ -165,21 +155,63 @@ Nafrcelibrary.controller('Libraryportal', function($scope){
 	    });    	
 	});
 	// **********************************************  END OF LOGIN ******************
-    
-});
-
-Nafrcelibrary.controller('Pdfviewercontroller', function($scope){
 	
-});
+	$http.get('/json/bookscategory.json').then(function successCallback(response) {
+    // this callback will be called asynchronously
+    // when the response is available
+         $scope.bookscategory=response.data;
+      }, function errorCallback(response) {
+        // called asynchronously if an error occurs
+        // or server returns response with an error status.
+        window.alert(response.data);
+      });
+      
+      
+    $http.get('/json/section.json').then(function successCallback(response) {
+    // this callback will be called asynchronously
+    // when the response is available
+	     $scope.librarysectiondata=response.data;
+	   
+	  }, function errorCallback(response) {
+	    // called asynchronously if an error occurs
+	    // or server returns response with an error status.
+	    window.alert(response.data);
+	   
+	  });
+	  
+	  $http.get('/json/books.json').then(function successCallback(response) {
+    // this callback will be called asynchronously
+    // when the response is available
+	     $scope.booksdata=response.data;
+	   
+	  }, function errorCallback(response) {
+	    // called asynchronously if an error occurs
+	    // or server returns response with an error status.
+	    window.alert(response.data);
+	   
+	  });
     
-Nafrcelibrary.controller('Addnewbook', function($scope){
+   
+      
+	//checking the on click for tab
+	$scope.whichcategory=$stateParams.ctid;
 	
-});    
+			
 
+    
+}]);
 
+Nafrcelibrary.controller('Outportal', ["$scope","$http", function($scope,$http){
+	
+	
+	
+}]);
 
-
-
+Nafrcelibrary.controller('Pdfviwer',["$scope", "$stateParams", function($scope, $stateParams){
+	
+	$scope.whichbook="../books/"+$stateParams.bookurl;
+	
+}]);
 
 
 

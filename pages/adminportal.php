@@ -69,26 +69,11 @@
                             </tr>
                           </thead>
                           <tbody>
-                              <tr>
-                                  <th scope="row">1</th>
-                                  <td>E-books</td>
-                                  <td>10,0000</td>
-                            </tr>
-                            <tr>
-                                  <th scope="row">2</th>
-                                  <td>Journals</td>
-                                  <td>10,0000</td>
-                            </tr>
-                            <tr>
-                                  <th scope="row">3</th>
-                                  <td>Reports / Article</td>
-                                  <td>10,0000</td>
-                            </tr>
-                            <tr>
-                                  <th scope="row">4</th>
-                                  <td>Documentation / Documentary</td>
-                                  <td>10,0000</td>
-                            </tr>
+                              <tr ng-repeat="category in bookscategory">
+                                  <th scope="row">{{$index+1}}</th>
+                                  <td>{{category.name}}</td>
+                                  <td>{{category.totalbooks}}</td>
+                                </tr>
                           </tbody>
                          </table>
                         

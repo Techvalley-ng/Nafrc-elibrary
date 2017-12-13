@@ -67,15 +67,17 @@
                               <th scope="col">Author</th>
                               <th scope="col">Year</th>
                               <th scope="col">Edition</th>
+                              <th scope="col">Category</th>
                             </tr>
                           </thead>
                           <tbody>
-                              <tr>
-                                  <th scope="row">1</th>
-                                  <td>AFIT</td>
-                                  <td>NAF</td>
-                                  <td>2017</td>
-                                  <td>second edition</td>
+                              <tr ng-repeat="book in booksdata">
+                                  <th scope="row">{{$index+1}}</th>
+                                  <td>{{book.booktitle}}</td>
+                                  <td>{{book.bookauthor}}</td>
+                                  <td>{{book.year}}</td>
+                                  <td>{{book.edition}}</td>
+                                  <td>{{book.bookcategor}}</td>
                             </tr>
                          
                           </tbody>

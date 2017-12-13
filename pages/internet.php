@@ -12,4 +12,6 @@
 </div>
 <!--************************** END OF TOP BAR *********************--> 
                 
-      
+<div class="embed-responsive embed-responsive-21by9">
+  <iframe class="embed-responsive-item" src="https://www.books.google.com.ng/bkshp?hl=en&tab=mp"></iframe>
+</div>   
