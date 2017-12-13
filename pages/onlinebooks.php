@@ -2,7 +2,7 @@
 <div class="box-top-bar" style="margin-top:0em;">
     <div class="row">
         <div class="col">
-            <a href="#!/memberportal"><i class="fa fa-home fa-2x" aria-hidden="true" ></i></a>
+            <a href="#!/memberportal/g1"><i class="fa fa-home fa-2x" aria-hidden="true" ></i></a>
         </div>
             <div class="col text-center">ONLINE BOOKS</div>
         <div class="col text-right">

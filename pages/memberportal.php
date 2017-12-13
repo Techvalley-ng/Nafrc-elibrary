@@ -84,7 +84,7 @@
                                   <td>{{book.edition}}</td>
                                   <td>{{book.bookcategor}}</td>
                                   <td>
-                                <a href="/#!/pdfviwer/cost.pdf">    
+                                <a href="/#!/pdfviwer/{{book.bookurl}}">    
                                 <input type="submit" style="cursor:pointer"class="btn btn-danger" name="viewbook" value="Read Book"/>
                                  </a></td>
                             </tr>

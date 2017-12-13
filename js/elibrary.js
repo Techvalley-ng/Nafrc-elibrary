@@ -196,7 +196,9 @@ Nafrcelibrary.controller('Nafrclibrary', ["$scope","$http","$stateParams", funct
 	//checking the on click for tab
 	$scope.whichcategory=$stateParams.ctid;
 	
-			
+	$("#newbook").submit(function(event) {
+		window.alert("You Have Successfully Added A New Book");
+		});		
 
     
 }]);
