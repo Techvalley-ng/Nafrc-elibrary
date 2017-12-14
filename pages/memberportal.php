@@ -53,11 +53,11 @@
                                 ONLINE BOOKS
                             </div>
                             </a>
-                            <a href="/#!/internet">
-                            <div class="left-side-tab text-nowrap">
-                                INTERNET BROWSING
-                            </div>
-                            </a>
+                            <!--<a href="/#!/internet">-->
+                            <!--<div class="left-side-tab text-nowrap">-->
+                            <!--    INTERNET BROWSING-->
+                            <!--</div>-->
+                            <!--</a>-->
                         </div>
                     </div>
                     <div class="col-9">
