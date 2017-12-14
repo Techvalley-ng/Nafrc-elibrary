@@ -12,8 +12,10 @@
 </div>
 <!--************************** END OF TOP BAR *********************--> 
  
-<div class="embed-responsive embed-responsive-21by9">
-  <iframe class="embed-responsive-item" src="{{whichbook}}"></iframe>
-</div>                 
+<!--<div class="embed-responsive embed-responsive-21by9">-->
+<!--  <iframe class="embed-responsive-item" height="1200" src="{{whichbook}}"></iframe>-->
+<!--</div>                 -->
+
+<iframe width="100%" height="697" src="{{whichbook}}"></iframe>
       
     

@@ -100,7 +100,7 @@ Nafrcelibrary.config(function($stateProvider, $urlRouterProvider,$routeProvider)
 			});		
 });   
 //***************************************** controller *****************************
-Nafrcelibrary.controller('Nafrclibrary', ["$scope","$http","$stateParams", function($scope,$http,$stateParams){
+Nafrcelibrary.controller('Nafrclibrary', ["$scope","$http","$stateParams","$filter", function($scope,$http,$stateParams,$filter){
     	// ******************************************** LOGIN ***************************
 	
 	$(document).ready(function (){
@@ -182,7 +182,11 @@ Nafrcelibrary.controller('Nafrclibrary', ["$scope","$http","$stateParams", funct
 	  $http.get('/json/books.json').then(function successCallback(response) {
     // this callback will be called asynchronously
     // when the response is available
+    	
 	     $scope.booksdata=response.data;
+	     
+	     	
+	     $scope.booktoread = $filter('filter')(response.data, $stateParams.ctid);
 	   
 	  }, function errorCallback(response) {
 	    // called asynchronously if an error occurs
@@ -193,20 +197,23 @@ Nafrcelibrary.controller('Nafrclibrary', ["$scope","$http","$stateParams", funct
     
    
       
-	//checking the on click for tab
-	$scope.whichcategory=$stateParams.ctid;
+	
+	
+	
 	
 	$("#newbook").submit(function(event) {
 		window.alert("You Have Successfully Added A New Book");
 		});		
-
+		
+	
+	
+	
     
 }]);
 
 Nafrcelibrary.controller('Outportal', ["$scope","$http", function($scope,$http){
 	
-	
-	
+
 }]);
 
 Nafrcelibrary.controller('Pdfviwer',["$scope", "$stateParams", function($scope, $stateParams){
@@ -214,6 +221,8 @@ Nafrcelibrary.controller('Pdfviwer',["$scope", "$stateParams", function($scope, 
 	$scope.whichbook="../books/"+$stateParams.bookurl;
 	
 }]);
+
+
 
 
 

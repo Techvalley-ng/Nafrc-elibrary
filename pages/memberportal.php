@@ -47,8 +47,6 @@
                                 </a>
                                 </div>
                                 
-                            
-                            
                             <!--tab end-->
                             <a href="/#!/onlinebooks">
                              <div class="left-side-tab text-nowrap">
@@ -76,7 +74,8 @@
                             </tr>
                           </thead>
                           <tbody>
-                              <tr ng-repeat="book in booksdata">
+                                
+                              <tr ng-repeat="book in booktoread | limitTo: 20">
                                   <th scope="row">{{$index+1}}</th>
                                   <td>{{book.booktitle}}</td>
                                   <td>{{book.bookauthor}}</td>
